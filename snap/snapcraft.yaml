@@ -1,0 +1,46 @@
+name: playdate-mirror
+base: core22
+version: '1.3.0'
+summary: Stream gameplay audio and video in real-time from your Playdate
+description: |
+  Mirror is an app that streams gameplay audio and video in real-time from your Playdate to a macOS, Windows, or Linux computer. 
+  
+  This makes it super simple to record or stream Playdate games, gives you a giant-sized screen for your Playdate, and, by using standard game controllers or your mouse or PC, allows you to control your Playdate accessibly using alternative inputs.
+
+grade: stable
+confinement: strict
+
+lint:
+  ignore:
+     - classic
+     - library
+  
+architectures:
+  - build-on: [amd64]
+    build-for: [amd64]
+    
+layout:
+  /usr/share/mirror:
+    bind: $SNAP/usr/share/mirror
+apps:
+  playdate-mirror:
+    command: usr/bin/mirror
+    extensions: [gnome]
+    plugs:
+      - home
+      - audio-playback
+      - network
+      - removable-media
+      - unity7
+      - browser-support
+      - joystick
+      - raw-usb
+
+parts:
+  playdate-mirror:
+    source: https://download.panic.com/mirror/Linux/Mirror-latest.deb
+    plugin: dump
+    source-type: deb
+    stage-packages:
+      - libjavascriptcoregtk-4.0-18
+      - libwebkit2gtk-4.0-37

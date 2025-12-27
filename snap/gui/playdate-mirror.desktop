@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=PlayDate Mirror
+Exec=playdate-mirror
+Icon=${SNAP}/meta/gui/playdate-mirror.svg
+Comment=Mirror your playdate console
+Terminal=false
+Type=Application
+MimeType=x-content/unix-software;
