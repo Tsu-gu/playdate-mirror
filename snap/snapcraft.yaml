@@ -1,6 +1,6 @@
 name: playdate-mirror
 base: core22
-version: '1.3.0'
+version: '1.4.0'
 summary: Stream gameplay audio and video in real-time from your Playdate
 description: |
   Mirror is an app that streams gameplay audio and video in real-time from your Playdate to a macOS, Windows, or Linux computer. 
